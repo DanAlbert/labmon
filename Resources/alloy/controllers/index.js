@@ -22,7 +22,14 @@ function Controller() {
         title: "Printers",
         id: "__alloyId1"
     });
+    $.__views.__alloyId2 = Ti.UI.createTableViewRow({
+        title: "Loading...",
+        id: "__alloyId2"
+    });
+    var __alloyId3 = [];
+    __alloyId3.push($.__views.__alloyId2);
     $.__views.printer_list = Ti.UI.createTableView({
+        data: __alloyId3,
         id: "printer_list"
     });
     $.__views.__alloyId1.add($.__views.printer_list);
@@ -34,23 +41,23 @@ function Controller() {
         icon: "KS_nav_ui.png"
     });
     $.__views.index.addTab($.__views.printer_tab);
-    $.__views.__alloyId3 = Ti.UI.createWindow({
+    $.__views.__alloyId5 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         title: "Labs",
-        id: "__alloyId3"
+        id: "__alloyId5"
     });
     $.__views.lab_list = Ti.UI.createTableView({
         id: "lab_list"
     });
-    $.__views.__alloyId3.add($.__views.lab_list);
+    $.__views.__alloyId5.add($.__views.lab_list);
     labClick ? $.__views.lab_list.addEventListener("click", labClick) : __defers["$.__views.lab_list!click!labClick"] = true;
-    $.__views.__alloyId2 = Ti.UI.createTab({
-        window: $.__views.__alloyId3,
+    $.__views.__alloyId4 = Ti.UI.createTab({
+        window: $.__views.__alloyId5,
         title: "Labs",
         icon: "KS_nav_views.png",
-        id: "__alloyId2"
+        id: "__alloyId4"
     });
-    $.__views.index.addTab($.__views.__alloyId2);
+    $.__views.index.addTab($.__views.__alloyId4);
     $.__views.index && $.addTopLevelView($.__views.index);
     exports.destroy = function() {};
     _.extend($, $.__views);

@@ -1,7 +1,20 @@
 <Alloy>
-	<Window id="printer_details" title="Printer Details">
-		<Label id="name"></Label>
-		<Label id="status"></Label>
-		<Label id="toner"></Label>
+	<Window id="printer_details" title="Printer Details" class="container" modal="true">
+		<Menu>
+			<MenuItem title="Refresh" onClick="refresh" />
+		</Menu>
+		<View layout="vertical">
+			<Label id="name"></Label>
+			<TableView>
+				<TableViewRow>
+					<Label left="10dp">Status:</Label>
+					<Label right="10dp" id="status"></Label>
+				</TableViewRow>
+				<TableViewRow>
+					<Label left="10dp">Toner:</Label>
+					<Label right="10dp" id="toner"></Label>
+				</TableViewRow>
+			</TableView>
+		</View>
 	</Window>
 </Alloy>

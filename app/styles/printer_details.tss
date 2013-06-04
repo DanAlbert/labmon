@@ -1,3 +1,21 @@
 ".container": {
 	backgroundColor: "white"
+},
+"TableView": {
+	separatorColor: 'transparent'
+},
+"Label": {
+	height: '30dp',
+	color: "#000000",
+	font: {
+		fontSize: '20dp'
+	}
+},
+"#name": {
+	height: '50dp',
+	left: '10dp',
+	font: {
+		fontSize: '30dp',
+		fontWeight: 'bold'
+	}
 }

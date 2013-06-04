@@ -2,7 +2,9 @@
 	<TabGroup>
 		<Tab id="printer_tab" title="Printers" icon="KS_nav_ui.png">
 			<Window title="Printers">
-				<TableView id="printer_list" onClick="printerClick"></TableView>
+				<TableView id="printer_list" onClick="printerClick">
+					<TableViewRow title="Loading..."></TableViewRow>
+				</TableView>
 			</Window>
 		</Tab>
 		<Tab title="Labs" icon="KS_nav_views.png">

@@ -1,7 +1,6 @@
 function printerClick(e) {
 	var args = {name: e.row.title};
 	Alloy.createController('printer_details', args).getView().open();
-	//$.index.close();
 }
 
 function labClick(e) {
