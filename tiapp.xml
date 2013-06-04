@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <property name="acs-oauth-secret-production" type="string">cC5OwDSgRnkmaKc757iGHUD9Pu2S2v5l</property>
-    <property name="acs-oauth-key-production" type="string">9PD1UrFa0wCmooz0rOWd7iu0x5D7vfpZ</property>
-    <property name="acs-api-key-production" type="string">tmH6pqxVBPt05dBTgX1wDlDc2zZYk1R9</property>
-    <property name="acs-oauth-secret-development" type="string">EZPbJoWskE9v8DGAWVNNmEwxkoN0J0rx</property>
-    <property name="acs-oauth-key-development" type="string">oKzobBzPFUCIVnaYCoOSk0fsyInnlDQ4</property>
-    <property name="acs-api-key-development" type="string">flFzJmX1295BFw4ZBUS44JFOoPbwp4Vo</property>
+    <property name="acs-oauth-secret-production" type="string">bpIvkIonfTYhEQSM0YzXJFmVQxwSKP1I</property>
+    <property name="acs-oauth-key-production" type="string">WiVU8pJnHHqLAcKBK0S4iZPuc4rvZ9CS</property>
+    <property name="acs-api-key-production" type="string">CbnE5edpTQq39uS9Pv8rvvnEHlDsuOGw</property>
+    <property name="acs-oauth-secret-development" type="string">lK6y6BzO7X2Pkh47ua2nlQ8jl2WKXHwf</property>
+    <property name="acs-oauth-key-development" type="string">97njePld5Upnzx4g30eCPXBLwfFHSfOf</property>
+    <property name="acs-api-key-development" type="string">nLTLzxxj3GgCIDYtY3JpuSSPoUWZ1wxw</property>
     <id>edu.oregonstate.engr.labmon</id>
     <name>labmon</name>
     <version>1.0</version>
-    <publisher>Dan</publisher>
+    <publisher>Dan Albert</publisher>
     <url>http://</url>
     <description>not specified</description>
-    <copyright>2013 by Dan</copyright>
+    <copyright>2013 by Dan Albert</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
@@ -21,7 +21,7 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>f8ed7a4a-2a52-40cc-bd11-f944e70dc591</guid>
+    <guid>3eb8858d-df0d-4872-8fde-2dd802b278be</guid>
     <property name="ti.ui.defaultunit" type="string">system</property>
     <iphone>
         <orientations device="iphone">
@@ -55,4 +55,7 @@
         <target device="tizen">false</target>
     </deployment-targets>
     <sdk-version>3.1.0.GA</sdk-version>
+    <plugins>
+        <plugin version="1.0">ti.alloy</plugin>
+    </plugins>
 </ti:app>

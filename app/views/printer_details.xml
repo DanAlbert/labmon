@@ -1,0 +1,7 @@
+<Alloy>
+	<Window id="printer_details" title="Printer Details">
+		<Label id="name"></Label>
+		<Label id="status"></Label>
+		<Label id="toner"></Label>
+	</Window>
+</Alloy>

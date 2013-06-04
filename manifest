@@ -1,9 +1,9 @@
-#appname: labmon
-#appid: edu.oregonstate.engr.labmon
-#type: mobile
-#guid: f8ed7a4a-2a52-40cc-bd11-f944e70dc591
-#version: 1.0
-#publisher: not specified
-#url: not specified
-#image: appicon.png
-#desc: not specified
+#appname:labmon
+#appid:edu.oregonstate.engr.labmon
+#type:mobile
+#guid:3eb8858d-df0d-4872-8fde-2dd802b278be
+#version:1.0
+#publisher:Dan Albert
+#url:http://
+#image:appicon.png
+#desc:not specified

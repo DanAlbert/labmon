@@ -1,0 +1,10 @@
+".container": {
+	backgroundColor: "white"
+},
+"TableViewRow": {
+	height: 100,
+	color: "#000000",
+	font: {
+		fontSize: 40
+	}
+}
