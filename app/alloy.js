@@ -15,4 +15,3 @@ Alloy.Globals.serviceURI = function(method) {
 	var servicePath = 'cgi-bin/cgiwrap/albertd/labstatus.cgi';
 	return scheme + '://' + host + '/' + servicePath + '/' + method;
 }
-

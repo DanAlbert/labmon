@@ -7,24 +7,29 @@ function labClick(e) {
 	alert('labClick(' + e.row.title + ')');
 }
 
+function refreshPrinters() {
+	$.printer_list.setData([Ti.UI.createTableViewRow({title: 'Loading...'})]);
+	
+	var client = Ti.Network.createHTTPClient({
+		onload: function(e) {
+			Ti.API.info(this.responseText);
+			var rows = [];
+			printerList = JSON.parse(this.responseText);
+			for (var i = 0; i < printerList.length; i++) {
+				rows.push(Alloy.createController(
+					'printer_row', printerList[i]).getView());
+			}
+			$.printer_list.setData(rows);
+		},
+		onerror: function(e) {
+			Ti.API.error(e.error);
+			alert('error: ' + e.error);
+		},
+		timeout: 10000
+	});
+	
+	client.open('GET', Alloy.Globals.serviceURI('printers/status'));
+	client.send();
+}
+
 $.index.open();
-
-var client = Ti.Network.createHTTPClient({
-	onload: function(e) {
-		Ti.API.info(this.responseText);
-		var rows = [];
-		printerList = JSON.parse(this.responseText);
-		for (var i = 0; i < printerList.length; i++) {
-			rows.push(Alloy.createController('printer_row', printerList[i]).getView());
-		}
-		$.printer_list.setData(rows);
-	},
-	onerror: function(e) {
-		Ti.API.error(e.error);
-		alert('error');
-	},
-	timeout: 5000
-});
-
-client.open('GET', Alloy.Globals.serviceURI('printers'));
-client.send();

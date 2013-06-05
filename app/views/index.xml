@@ -1,15 +1,18 @@
 <Alloy>
 	<TabGroup>
 		<Tab id="printer_tab" title="Printers" icon="KS_nav_ui.png">
-			<Window title="Printers">
-				<TableView id="printer_list" onClick="printerClick">
-					<TableViewRow title="Loading..."></TableViewRow>
-				</TableView>
+			<Window title="Printers" onFocus="refreshPrinters">
+				<Menu>
+					<MenuItem title="Refresh" onClick="refresh" />
+				</Menu>
+				<TableView id="printer_list" onClick="printerClick"></TableView>
 			</Window>
 		</Tab>
 		<Tab title="Labs" icon="KS_nav_views.png">
 			<Window title="Labs">
-				<TableView id="lab_list" onClick="labClick"></TableView>
+				<Label>Not yet. Maybe for the next release.</Label>
+				<!--<TableView id="lab_list" onClick="labClick">
+				</TableView>-->
 			</Window>
 		</Tab>
 	</TabGroup>

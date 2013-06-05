@@ -15,8 +15,9 @@ function Controller() {
     $.__views.row && $.addTopLevelView($.__views.row);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    var arg = arguments[0] || "";
-    $.row.title = arg;
+    var printer = arguments[0] || "";
+    $.row.title = printer.name;
+    printer.has_error ? $.row.setRightImage(Ti.Filesystem.resourcesDirectory + "error.png") : $.row.setRightImage(Ti.Filesystem.resourcesDirectory + "success.png");
     _.extend($, exports);
 }
 

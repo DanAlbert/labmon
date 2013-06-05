@@ -1,0 +1,10 @@
+android/ATTR_MINIFY=true
+android/ATTR_PROJECT_NAME=labmon
+android/abi=armeabi-v7a
+android/distribute_path=C\:\\Users\\Dan\\Desktop\\labmon
+android/keystore_alias=edu.oregonstate.engr.labmon
+android/keystore_password=R_&d5HypwV^E
+android/keystore_path=C\:\\Users\\Dan\\keystores\\android.keystore
+android/recent_output=C\:\\Users\\Dan\\Desktop\\labmon
+android/sdk_version=Android 4.2.2
+eclipse.preferences.version=1
