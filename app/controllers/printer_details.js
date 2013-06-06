@@ -7,7 +7,7 @@ function refresh() {
 	$.status.text = 'Loading...';
 	$.toner.text = 'Loading...';
 	
-	var client = Ti.Network.createHTTPClient({
+	var client = Alloy.Globals.HTTPClient({
 		onload: function(e) {
 			var printer = JSON.parse(this.responseText);
 			var pagesRemaining = printer.pages_remaining;
@@ -30,11 +30,9 @@ function refresh() {
 			Ti.API.error(e.error);
 			alert('error: ' + e.error);
 		},
-		timeout: 5000
+		retry: refresh
 	});
 	
 	client.open('GET', Alloy.Globals.serviceURI('printer/' + name));
 	client.send();
 }
-
-refresh();

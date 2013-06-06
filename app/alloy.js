@@ -12,6 +12,40 @@
 Alloy.Globals.serviceURI = function(method) {
 	var scheme = 'https';
 	var host = 'web.engr.oregonstate.edu';
-	var servicePath = 'cgi-bin/cgiwrap/albertd/labstatus.cgi';
+	var servicePath = 'cgi-bin/cgiwrap/albertd/labstatus-staging.cgi';
 	return scheme + '://' + host + '/' + servicePath + '/' + method;
+}
+
+Alloy.Globals.login = function(callback) {
+	var username = '';
+	var password = '';
+	
+	var client = Ti.Network.createHTTPClient({
+		onload: function(e) {
+			callback();
+		},
+		onerror: function(e) {
+			Ti.API.error(e.error);
+			alert('error: ' + e.error);
+		},
+		timeout: 10000
+	});
+	
+	client.open('POST', Alloy.Globals.serviceURI('login'));
+	client.send({username: username, password: password});
+}
+
+Alloy.Globals.HTTPClient = function(data) {
+	return client = Ti.Network.createHTTPClient({
+		onload: data.onload,
+		onerror: function(e) {
+			if (e.source.status == 401) {
+				Alloy.Globals.login(data.retry);
+			}
+			else {
+				data.onerror(e);
+			}
+		},
+		timeout: 10000
+	});
 }

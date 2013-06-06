@@ -2,7 +2,7 @@ function Controller() {
     function refresh() {
         $.status.text = "Loading...";
         $.toner.text = "Loading...";
-        var client = Ti.Network.createHTTPClient({
+        var client = Alloy.Globals.HTTPClient({
             onload: function() {
                 var printer = JSON.parse(this.responseText);
                 var pagesRemaining = printer.pages_remaining;
@@ -15,7 +15,7 @@ function Controller() {
                 Ti.API.error(e.error);
                 alert("error: " + e.error);
             },
-            timeout: 5e3
+            retry: refresh
         });
         client.open("GET", Alloy.Globals.serviceURI("printer/" + name));
         client.send();
@@ -33,6 +33,7 @@ function Controller() {
         modal: "true"
     });
     $.__views.printer_details && $.addTopLevelView($.__views.printer_details);
+    refresh ? $.__views.printer_details.addEventListener("focus", refresh) : __defers["$.__views.printer_details!focus!refresh"] = true;
     $.__views.printer_details.activity.onCreateOptionsMenu = function(e) {
         var __alloyId12 = {
             title: "Refresh",
@@ -120,7 +121,7 @@ function Controller() {
     var arg = arguments[0];
     var name = arg.name;
     $.name.text = name;
-    refresh();
+    __defers["$.__views.printer_details!focus!refresh"] && $.__views.printer_details.addEventListener("focus", refresh);
     __defers["$.__views.__alloyId11!click!refresh"] && $.__views.__alloyId11.addEventListener("click", refresh);
     _.extend($, exports);
 }

@@ -11,7 +11,7 @@
     <version>1.0</version>
     <publisher>Dan Albert</publisher>
     <url>http://</url>
-    <description>not specified</description>
+    <description>This application is for use by the College of Engineering Help Desk lab staff at Oregon State University.</description>
     <copyright>2013 by Dan Albert</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>

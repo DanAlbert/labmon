@@ -9,7 +9,7 @@ function Controller() {
         $.printer_list.setData([ Ti.UI.createTableViewRow({
             title: "Loading..."
         }) ]);
-        var client = Ti.Network.createHTTPClient({
+        var client = Alloy.Globals.HTTPClient({
             onload: function() {
                 Ti.API.info(this.responseText);
                 var rows = [];
@@ -21,7 +21,7 @@ function Controller() {
                 Ti.API.error(e.error);
                 alert("error: " + e.error);
             },
-            timeout: 1e4
+            retry: refreshPrinters
         });
         client.open("GET", Alloy.Globals.serviceURI("printers/status"));
         client.send();

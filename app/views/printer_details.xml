@@ -1,5 +1,6 @@
 <Alloy>
-	<Window id="printer_details" title="Printer Details" class="container" modal="true">
+	<Window id="printer_details" title="Printer Details" class="container"
+	        modal="true" onFocus="refresh">
 		<Menu>
 			<MenuItem title="Refresh" onClick="refresh" />
 		</Menu>
