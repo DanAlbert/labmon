@@ -1,0 +1,10 @@
+".container": {
+	backgroundColor: "white"
+},
+"Label": {
+	height: '30dp',
+	color: "#000000",
+	font: {
+		fontSize: '20dp'
+	}
+}

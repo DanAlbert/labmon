@@ -10,4 +10,7 @@
 		fontFamily: 'Helvetica Neue'
 	},
 	textAlign: 'center'
+},
+"Button": {
+	width: "100%"
 }

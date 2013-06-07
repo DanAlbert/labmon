@@ -1,0 +1,6 @@
+<Alloy>
+	<TableViewRow id="row">
+		<Label id="description" left="10dp"></Label>
+		<Label id="location" right="10dp"></Label>
+	</TableViewRow>
+</Alloy>

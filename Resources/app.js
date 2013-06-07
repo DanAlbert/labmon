@@ -7,6 +7,13 @@ Alloy.Globals.serviceURI = function(method) {
     return scheme + "://" + host + "/" + servicePath + "/" + method;
 };
 
+Alloy.Globals.gaeServiceURI = function(method) {
+    var scheme = "http";
+    var host = "whdlabmon.appspot.com";
+    var servicePath = "";
+    return scheme + "://" + host + "/" + servicePath + "/" + method;
+};
+
 Alloy.Globals.login = function(callback) {
     var username = "";
     var password = "";

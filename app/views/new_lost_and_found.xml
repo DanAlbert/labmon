@@ -1,0 +1,12 @@
+<Alloy>
+	<Window id="new_lost_and_found" title="New Lost and Found Item"
+	        class="container" modal="true">
+		<View layout="vertical">
+			<TextField id="description" hintText="What" />
+			<TextField id="location" hintText="Where" />
+			<ImageView id="image" />
+			<Button title="Take Photo" onClick="takePhoto" />
+			<Button title="Submit" onClick="submit" />
+		</View>
+	</Window>
+</Alloy>

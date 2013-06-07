@@ -15,5 +15,13 @@
 				</TableView>-->
 			</Window>
 		</Tab>
+		<Tab title="Lost and Found">
+			<Window title="Lost and Found" onFocus="refreshLostAndFound">
+				<View layout="vertical">
+					<Button title="Add" onClick="newLostAndFound" />
+					<TableView id="laf_list"></TableView>
+				</View>
+			</Window>
+		</Tab>
 	</TabGroup>
 </Alloy>

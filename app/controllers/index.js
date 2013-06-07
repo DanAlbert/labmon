@@ -7,6 +7,10 @@ function labClick(e) {
 	alert('labClick(' + e.row.title + ')');
 }
 
+function newLostAndFound() {
+	Alloy.createController('new_lost_and_found').getView().open();
+}
+
 function refreshPrinters() {
 	$.printer_list.setData([Ti.UI.createTableViewRow({title: 'Loading...'})]);
 	
@@ -29,6 +33,32 @@ function refreshPrinters() {
 	});
 	
 	client.open('GET', Alloy.Globals.serviceURI('printers/status'));
+	client.send();
+}
+
+function refreshLostAndFound() {
+	$.laf_list.setData([Ti.UI.createTableViewRow({title: 'Loading...'})]);
+	
+	var client = Ti.Network.createHTTPClient({
+		onload: function(e) {
+			Ti.API.info(this.responseText);
+			var rows = [];
+			lafList = JSON.parse(this.responseText);
+			for (var i = 0; i < lafList.length; i++) {
+				rows.push(Alloy.createController(
+					'laf_row', lafList[i]).getView());
+			}
+			$.laf_list.setData(rows);
+		},
+		onerror: function(e) {
+			Ti.API.error(e.error);
+			alert('error: ' + e.error);
+		},
+		retry: refreshLostAndFound
+	});
+	
+	Ti.API.info(Alloy.Globals.gaeServiceURI('lost-and-found'));
+	client.open('GET', Alloy.Globals.gaeServiceURI('lost-and-found'));
 	client.send();
 }
 

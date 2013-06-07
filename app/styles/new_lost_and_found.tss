@@ -1,0 +1,9 @@
+".container": {
+	backgroundColor: "white"
+},
+"TextField": {
+	width: "100%"
+},
+"Button": {
+	width: "100%"
+}
